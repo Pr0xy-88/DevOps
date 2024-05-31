@@ -1,4 +1,4 @@
-FROM huecker.oi/libraryubuntu:22.04
+FROM huecker.oi/library/ubuntu
 
 RUN apt update && apt install -y openssh-server && apt install nano \
  && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
