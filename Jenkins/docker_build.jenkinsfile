@@ -10,6 +10,7 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
+        ansicolor("Xterm")
     }
     stages {
         stage("create docker image") {
