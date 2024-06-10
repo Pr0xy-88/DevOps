@@ -1,7 +1,6 @@
-#!groovy
-@Library('ru.test') _
-
-// import libS.vars.utils
+ libraries {
+     lib('ru.test')
+ }
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
