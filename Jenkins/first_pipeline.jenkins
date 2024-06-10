@@ -1,6 +1,8 @@
- libraries {
+libraries {
      lib('libS.ru.test')
- }
+}
+
+utils = new libS.ru.test.vars.utils("ls -la")
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
@@ -10,6 +12,7 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
+        ansiColor('xterm')
     }
     stages {
         stage("First step") {
@@ -18,11 +21,6 @@ pipeline {
                 echo utils.cmd
                 utils.runCommand()
                 echo utils.getOutput()
-            }
-        }
-        stage("Second step") {
-            steps {
-                sh 'ssh dvm@192.168.0.16 \'uptime\''
             }
         }
     }
