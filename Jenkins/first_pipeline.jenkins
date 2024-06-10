@@ -1,4 +1,7 @@
 #!groovy
+
+@Library('timedCommand') import static /vars/timedCommand.groovy.*
+
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
 
@@ -11,7 +14,10 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh dvm@192.168.0.16 \'hostname\''
+                timedCommand.cmd = 'ls-la'
+                echo timedCommad.cmd
+                timedCommand.runCommand()
+                echo timedCommand.getOutput()
             }
         }
         stage("Second step") {
