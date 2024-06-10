@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                def myUtils = new vars.utils()
+                def myUtils = new libS.vars.utils()
                 myUtils.timedCommand.cmd = 'ls-la'
                 echo myUtils.timedCommad.cmd
                 myUtils.timedCommand.runCommand()
