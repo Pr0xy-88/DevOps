@@ -1,5 +1,5 @@
 #!groovy
-@Library('utils') import libS.vars.utils
+@Library('DevOpsLibraries') import libS.vars.utils
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
