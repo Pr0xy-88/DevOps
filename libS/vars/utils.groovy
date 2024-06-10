@@ -1,4 +1,4 @@
-//vars/timedCommand.groovy
+//vars/utils.groovy
 def setCommand(commandTorun) {
     cmd = commandTorun
 }
