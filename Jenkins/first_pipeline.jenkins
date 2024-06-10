@@ -1,5 +1,5 @@
  libraries {
-     lib('ru.test')
+     lib('libS.ru.test')
  }
 
 // Check Ubuntu-1 properties
@@ -14,11 +14,10 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                def myUtils = new libS.vars.utils()
-                myUtils.timedCommand.cmd = 'ls-la'
-                echo myUtils.timedCommad.cmd
-                myUtils.timedCommand.runCommand()
-                echo myUtils.timedCommand.getOutput()
+                utils.cmd = 'ls-la'
+                echo utils.cmd
+                utils.runCommand()
+                echo utils.getOutput()
             }
         }
         stage("Second step") {
