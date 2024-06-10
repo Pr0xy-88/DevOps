@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                def myUtils = new Jenkins.vars.timedCommand.groovy()
+                def myUtils = new Jenkins.vars.timedCommand()
                 myUtils.timedCommand.cmd = 'ls-la'
                 echo myUtils.timedCommad.cmd
                 myUtils.timedCommand.runCommand()
