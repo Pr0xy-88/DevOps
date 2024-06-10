@@ -1,4 +1,5 @@
 #!groovy
+@Library('timedCommand') _
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
