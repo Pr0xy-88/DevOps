@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('timedCommand') import static /vars/timedCommand.groovy.*
+@Library('timedCommand') import static vars.timedCommand.groovy.*
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
@@ -14,10 +14,11 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                timedCommand.cmd = 'ls-la'
-                echo timedCommad.cmd
-                timedCommand.runCommand()
-                echo timedCommand.getOutput()
+                def myUtils = new vars.timedCommand.groovy()
+                myUtils.timedCommand.cmd = 'ls-la'
+                echo myUtils.timedCommad.cmd
+                myUtils.timedCommand.runCommand()
+                echo myUtils.timedCommand.getOutput()
             }
         }
         stage("Second step") {
