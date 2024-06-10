@@ -1,5 +1,5 @@
 #!groovy
-@Library('libS') _
+@Library('ru.test') _
 
 // import libS.vars.utils
 
