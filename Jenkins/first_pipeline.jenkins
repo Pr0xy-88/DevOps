@@ -1,5 +1,5 @@
 #!groovy
-@Library('myLib') import Jenkins.vars.timedCommand
+@Library('DevOpsLibraries@1.0') import Jenkins.vars.timedCommand
 
 // Check Ubuntu-1 properties
 properties([disableConcurrentBuilds()])
