@@ -19,6 +19,9 @@ pipeline {
                 dir ('Docker') {
                 	sh 'docker build . -f ubuntu.dockerfile -t ubuntu'
                 }
+            steps {
+                echo " ============== start create container =================="
+                	sh 'docker run --i ubuntu-23.04 ubuntu'
             }
         }
     }
